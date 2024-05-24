@@ -134,7 +134,7 @@ public class TelaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_menuFuncionariosActionPerformed
 
     private void mItemVerEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemVerEstoqueActionPerformed
-        new CadastroProdutos().setVisible(true);
+        new TelaEstoque().setVisible(true);
     }//GEN-LAST:event_mItemVerEstoqueActionPerformed
 
     private void mItemHistoricoSafrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemHistoricoSafrasActionPerformed
