@@ -7,7 +7,7 @@ public class Index extends javax.swing.JFrame {
 
     public Index() {
         initComponents();
-        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icone.jpg")).getImage());
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icon_LogoAgro.jpg")).getImage());
     }
 
     /**
@@ -21,18 +21,18 @@ public class Index extends javax.swing.JFrame {
 
         jFrame1 = new javax.swing.JFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jLabel1 = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JFormattedTextField();
-        jLabel2 = new javax.swing.JLabel();
+        lblSenha = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
-        BtPassword = new javax.swing.JButton();
+        BtnPassword = new javax.swing.JButton();
         ckSenha = new javax.swing.JCheckBox();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        img_LogoAgro = new javax.swing.JLabel();
+        lblSubTitulo = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        fundo1 = new javax.swing.JLabel();
+        fundo2 = new javax.swing.JLabel();
+        fundo3 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -51,11 +51,11 @@ public class Index extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("E-mail");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(390, 130, 40, 16);
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(255, 255, 255));
+        lblEmail.setText("E-mail");
+        getContentPane().add(lblEmail);
+        lblEmail.setBounds(390, 130, 40, 16);
 
         txtUsuario.setBackground(new java.awt.Color(245, 245, 245));
         txtUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -69,11 +69,11 @@ public class Index extends javax.swing.JFrame {
         getContentPane().add(txtUsuario);
         txtUsuario.setBounds(390, 150, 200, 30);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Senha");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(390, 190, 60, 16);
+        lblSenha.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSenha.setForeground(new java.awt.Color(255, 255, 255));
+        lblSenha.setText("Senha");
+        getContentPane().add(lblSenha);
+        lblSenha.setBounds(390, 190, 60, 16);
 
         txtSenha.setBackground(new java.awt.Color(245, 245, 245));
         txtSenha.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -90,16 +90,16 @@ public class Index extends javax.swing.JFrame {
         getContentPane().add(txtSenha);
         txtSenha.setBounds(390, 210, 200, 30);
 
-        BtPassword.setBackground(new java.awt.Color(245, 245, 245));
-        BtPassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BtPassword.setText("Enviar");
-        BtPassword.addActionListener(new java.awt.event.ActionListener() {
+        BtnPassword.setBackground(new java.awt.Color(245, 245, 245));
+        BtnPassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BtnPassword.setText("Enviar");
+        BtnPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtPasswordActionPerformed(evt);
+                BtnPasswordActionPerformed(evt);
             }
         });
-        getContentPane().add(BtPassword);
-        BtPassword.setBounds(400, 280, 140, 33);
+        getContentPane().add(BtnPassword);
+        BtnPassword.setBounds(400, 280, 140, 33);
 
         ckSenha.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ckSenha.setForeground(new java.awt.Color(242, 242, 242));
@@ -112,33 +112,33 @@ public class Index extends javax.swing.JFrame {
         getContentPane().add(ckSenha);
         ckSenha.setBounds(410, 250, 100, 20);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agrocultiva_Orquídea___1_-removebg-preview.png"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(-100, 40, 390, 280);
+        img_LogoAgro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agrocultiva_Orquídea___1_-removebg-preview.png"))); // NOI18N
+        getContentPane().add(img_LogoAgro);
+        img_LogoAgro.setBounds(-100, 40, 390, 280);
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Digite seus dados de acesso no campo abaixo.");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(330, 80, 290, 30);
+        lblSubTitulo.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        lblSubTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblSubTitulo.setText("Digite seus dados de acesso no campo abaixo.");
+        getContentPane().add(lblSubTitulo);
+        lblSubTitulo.setBounds(330, 80, 290, 30);
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("                    Boas vindas!");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(340, 30, 240, 60);
+        lblTitulo.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setText("                    Boas vindas!");
+        getContentPane().add(lblTitulo);
+        lblTitulo.setBounds(340, 30, 240, 60);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ciano degrade.png"))); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(300, -100, 340, 660);
+        fundo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ciano degrade.png"))); // NOI18N
+        getContentPane().add(fundo1);
+        fundo1.setBounds(300, -100, 340, 660);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco neve.png"))); // NOI18N
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(0, 60, 300, 340);
+        fundo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco neve.png"))); // NOI18N
+        getContentPane().add(fundo2);
+        fundo2.setBounds(0, 60, 300, 340);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco neve.png"))); // NOI18N
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(0, 0, 300, 100);
+        fundo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco neve.png"))); // NOI18N
+        getContentPane().add(fundo3);
+        fundo3.setBounds(0, 0, 300, 100);
 
         pack();
         setLocationRelativeTo(null);
@@ -148,7 +148,7 @@ public class Index extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
-    private void BtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtPasswordActionPerformed
+    private void BtnPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPasswordActionPerformed
         // TODO add your handling code here:
         String login,senha;
         
@@ -171,7 +171,7 @@ public class Index extends javax.swing.JFrame {
 
     TelaMenu telaMenu = new TelaMenu();
     telaMenu.setVisible(true);
-    }//GEN-LAST:event_BtPasswordActionPerformed
+    }//GEN-LAST:event_BtnPasswordActionPerformed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
@@ -233,18 +233,18 @@ public class Index extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtPassword;
+    private javax.swing.JButton BtnPassword;
     private javax.swing.JCheckBox ckSenha;
+    private javax.swing.JLabel fundo1;
+    private javax.swing.JLabel fundo2;
+    private javax.swing.JLabel fundo3;
+    private javax.swing.JLabel img_LogoAgro;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblSenha;
+    private javax.swing.JLabel lblSubTitulo;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JPasswordField txtSenha;
     private javax.swing.JFormattedTextField txtUsuario;
     // End of variables declaration//GEN-END:variables

@@ -17,7 +17,7 @@ public class TelaCadUse extends javax.swing.JFrame {
      */
     public TelaCadUse() {
         initComponents();
-        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icone.jpg")).getImage());
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icon_LogoAgro.jpg")).getImage());
     }
 
     /**

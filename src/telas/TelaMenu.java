@@ -4,6 +4,8 @@
  */
 package telas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 824114192
@@ -15,7 +17,7 @@ public class TelaMenu extends javax.swing.JFrame {
      */
     public TelaMenu() {
         initComponents();
-        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icone.jpg")).getImage());
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icon_LogoAgro.jpg")).getImage());
     }
 
     /**
@@ -28,17 +30,14 @@ public class TelaMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        Arquivo = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        Cadastrar = new javax.swing.JMenuItem();
-        Fornecedores = new javax.swing.JMenu();
-        cadastrarFornecedores = new javax.swing.JMenuItem();
-        Produtos = new javax.swing.JMenu();
-        procurarProdutos = new javax.swing.JMenuItem();
-        Relatorio = new javax.swing.JMenu();
-        Days = new javax.swing.JMenuItem();
-        Years = new javax.swing.JMenuItem();
+        navBar = new javax.swing.JMenuBar();
+        menuFuncionarios = new javax.swing.JMenu();
+        mItemVerFuncionarios = new javax.swing.JMenuItem();
+        menuEstoque = new javax.swing.JMenu();
+        mItemVerEstoque = new javax.swing.JMenuItem();
+        menuSafras = new javax.swing.JMenu();
+        mItemHistoricoSafras = new javax.swing.JMenuItem();
+        menuLogout = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu ");
@@ -51,88 +50,102 @@ public class TelaMenu extends javax.swing.JFrame {
         getContentPane().add(jDesktopPane1);
         jDesktopPane1.setBounds(0, 0, 640, 330);
 
-        jMenuBar1.setBackground(new java.awt.Color(252, 233, 204));
+        navBar.setBackground(new java.awt.Color(252, 233, 204));
 
-        Arquivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/application_double.png"))); // NOI18N
-        Arquivo.setText("Arquivo");
-        jMenuBar1.add(Arquivo);
-
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user.png"))); // NOI18N
-        jMenu2.setText("Funcionarios");
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+        menuFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_Usuario.png"))); // NOI18N
+        menuFuncionarios.setText("Funcionarios");
+        menuFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
+                menuFuncionariosActionPerformed(evt);
             }
         });
 
-        Cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/folder_user.png"))); // NOI18N
-        Cadastrar.setText("Cadastrar");
-        Cadastrar.addActionListener(new java.awt.event.ActionListener() {
+        mItemVerFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/folder_user.png"))); // NOI18N
+        mItemVerFuncionarios.setText("Cadastrar");
+        mItemVerFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadastrarActionPerformed(evt);
+                mItemVerFuncionariosActionPerformed(evt);
             }
         });
-        jMenu2.add(Cadastrar);
+        menuFuncionarios.add(mItemVerFuncionarios);
 
-        jMenuBar1.add(jMenu2);
+        navBar.add(menuFuncionarios);
 
-        Fornecedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/page_white_paste.png"))); // NOI18N
-        Fornecedores.setText("Fornecedores");
+        menuEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_cesta.png"))); // NOI18N
+        menuEstoque.setText("Estoque");
 
-        cadastrarFornecedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/page_white_magnify.png"))); // NOI18N
-        cadastrarFornecedores.setText("Cadastrar");
-        Fornecedores.add(cadastrarFornecedores);
-
-        jMenuBar1.add(Fornecedores);
-
-        Produtos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/basket.png"))); // NOI18N
-        Produtos.setText("Produtos");
-
-        procurarProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/zoom.png"))); // NOI18N
-        procurarProdutos.setText("Cadastrar");
-        procurarProdutos.addActionListener(new java.awt.event.ActionListener() {
+        mItemVerEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/zoom.png"))); // NOI18N
+        mItemVerEstoque.setText("Ver Estoque");
+        mItemVerEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                procurarProdutosActionPerformed(evt);
+                mItemVerEstoqueActionPerformed(evt);
             }
         });
-        Produtos.add(procurarProdutos);
+        menuEstoque.add(mItemVerEstoque);
 
-        jMenuBar1.add(Produtos);
+        navBar.add(menuEstoque);
 
-        Relatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer_add.png"))); // NOI18N
-        Relatorio.setText("Relatorio");
+        menuSafras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/page_white_paste.png"))); // NOI18N
+        menuSafras.setText("Safras");
 
-        Days.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clock_red.png"))); // NOI18N
-        Days.setText("30 Dias");
-        Relatorio.add(Days);
+        mItemHistoricoSafras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/page_white_magnify.png"))); // NOI18N
+        mItemHistoricoSafras.setText("Historico");
+        mItemHistoricoSafras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mItemHistoricoSafrasActionPerformed(evt);
+            }
+        });
+        menuSafras.add(mItemHistoricoSafras);
 
-        Years.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clock.png"))); // NOI18N
-        Years.setText("Ultimo Ano");
-        Relatorio.add(Years);
+        navBar.add(menuSafras);
 
-        jMenuBar1.add(Relatorio);
+        menuLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_sair.png"))); // NOI18N
+        menuLogout.setText("Sair");
+        menuLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuLogoutMouseClicked(evt);
+            }
+        });
+        navBar.add(menuLogout);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(navBar);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
+    private void mItemVerFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemVerFuncionariosActionPerformed
         // TODO add your handling code here:
         
         new TelaCadUse().setVisible(true);
 
         
-    }//GEN-LAST:event_CadastrarActionPerformed
+    }//GEN-LAST:event_mItemVerFuncionariosActionPerformed
 
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+    public void deslogar(){
+    dispose();
+
+    Index telaIndex = new Index();
+    telaIndex.setVisible(true);
+    }
+    
+    private void menuFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuFuncionariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu2ActionPerformed
+    }//GEN-LAST:event_menuFuncionariosActionPerformed
 
-    private void procurarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurarProdutosActionPerformed
+    private void mItemVerEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemVerEstoqueActionPerformed
         new CadastroProdutos().setVisible(true);
-    }//GEN-LAST:event_procurarProdutosActionPerformed
+    }//GEN-LAST:event_mItemVerEstoqueActionPerformed
+
+    private void mItemHistoricoSafrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemHistoricoSafrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mItemHistoricoSafrasActionPerformed
+
+    private void menuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuLogoutMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Até a proxima!");
+        deslogar();
+    }//GEN-LAST:event_menuLogoutMouseClicked
 
     /**
      * @param args the command line arguments
@@ -170,17 +183,14 @@ public class TelaMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu Arquivo;
-    private javax.swing.JMenuItem Cadastrar;
-    private javax.swing.JMenuItem Days;
-    private javax.swing.JMenu Fornecedores;
-    private javax.swing.JMenu Produtos;
-    private javax.swing.JMenu Relatorio;
-    private javax.swing.JMenuItem Years;
-    private javax.swing.JMenuItem cadastrarFornecedores;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem procurarProdutos;
+    private javax.swing.JMenuItem mItemHistoricoSafras;
+    private javax.swing.JMenuItem mItemVerEstoque;
+    private javax.swing.JMenuItem mItemVerFuncionarios;
+    private javax.swing.JMenu menuEstoque;
+    private javax.swing.JMenu menuFuncionarios;
+    private javax.swing.JMenu menuLogout;
+    private javax.swing.JMenu menuSafras;
+    private javax.swing.JMenuBar navBar;
     // End of variables declaration//GEN-END:variables
 }
