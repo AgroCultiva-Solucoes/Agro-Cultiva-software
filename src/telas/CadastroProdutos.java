@@ -178,12 +178,12 @@ public class CadastroProdutos extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(btClose))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 663, 526);
+        jPanel1.setBounds(0, 0, 663, 410);
 
         pack();
         setLocationRelativeTo(null);
