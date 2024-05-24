@@ -187,57 +187,32 @@ public class TelaEstoque extends javax.swing.JFrame {
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 670, 460);
+        jPanel1.setBounds(0, 0, 670, 500);
 
-        setSize(new java.awt.Dimension(686, 467));
+        setSize(new java.awt.Dimension(686, 508));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+    private void btCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCloseActionPerformed
+        dispose();
 
-        DefaultTableModel btmPRODUTOS = (DefaultTableModel)jtPRODUTOS.getModel();
-        Object [] dados = {tfDESCRICAO.getText(),tfQTD.getText(),tfPRECO.getText()};
-        btmPRODUTOS.addRow(dados);
-    }//GEN-LAST:event_btCadastrarActionPerformed
+        TelaMenu menu = new TelaMenu();
+        menu.setVisible(true);
+    }//GEN-LAST:event_btCloseActionPerformed
 
-    private void jtPRODUTOSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtPRODUTOSMouseClicked
-
-        if(jtPRODUTOS.getSelectedRow() != -1){
-
-            lbDescricao.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 0).toString());
-            lbQTD.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 1).toString());
-            lbPRECO.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 2).toString());
-
-        }
-    }//GEN-LAST:event_jtPRODUTOSMouseClicked
-
-    private void jtPRODUTOSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPRODUTOSKeyReleased
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if(jtPRODUTOS.getSelectedRow() != -1){
 
-            lbDescricao.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 0).toString());
-            lbQTD.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 1).toString());
-            lbPRECO.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 2).toString());
-
+            jtPRODUTOS.setValueAt(lbDescricao.getText(), jtPRODUTOS.getSelectedRow(), 0);
+            jtPRODUTOS.setValueAt(lbQTD.getText(), jtPRODUTOS.getSelectedRow(), 1);
+            jtPRODUTOS.setValueAt(lbPRECO.getText(), jtPRODUTOS.getSelectedRow(), 2);
         }
-    }//GEN-LAST:event_jtPRODUTOSKeyReleased
-
-    private void tfPRECOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPRECOActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfPRECOActionPerformed
-
-    private void tfPRECOKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPRECOKeyPressed
-        //Comando para quando pressionar a tecla enter
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-            DefaultTableModel btmPRODUTOS = (DefaultTableModel)jtPRODUTOS.getModel();
-            Object [] dados = {tfDESCRICAO.getText(),tfQTD.getText(),tfPRECO.getText()};
-            btmPRODUTOS.addRow(dados);
-        }
-    }//GEN-LAST:event_tfPRECOKeyPressed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
 
@@ -251,22 +226,47 @@ public class TelaEstoque extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btExcluirActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void tfPRECOKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPRECOKeyPressed
+        //Comando para quando pressionar a tecla enter
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            DefaultTableModel btmPRODUTOS = (DefaultTableModel)jtPRODUTOS.getModel();
+            Object [] dados = {tfDESCRICAO.getText(),tfQTD.getText(),tfPRECO.getText()};
+            btmPRODUTOS.addRow(dados);
+        }
+    }//GEN-LAST:event_tfPRECOKeyPressed
+
+    private void tfPRECOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPRECOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfPRECOActionPerformed
+
+    private void jtPRODUTOSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPRODUTOSKeyReleased
         // TODO add your handling code here:
         if(jtPRODUTOS.getSelectedRow() != -1){
 
-            jtPRODUTOS.setValueAt(lbDescricao.getText(), jtPRODUTOS.getSelectedRow(), 0);
-            jtPRODUTOS.setValueAt(lbQTD.getText(), jtPRODUTOS.getSelectedRow(), 1);
-            jtPRODUTOS.setValueAt(lbPRECO.getText(), jtPRODUTOS.getSelectedRow(), 2);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
+            lbDescricao.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 0).toString());
+            lbQTD.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 1).toString());
+            lbPRECO.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 2).toString());
 
-    private void btCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCloseActionPerformed
-       dispose();
-       
-       TelaMenu menu = new TelaMenu();
-       menu.setVisible(true);
-    }//GEN-LAST:event_btCloseActionPerformed
+        }
+    }//GEN-LAST:event_jtPRODUTOSKeyReleased
+
+    private void jtPRODUTOSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtPRODUTOSMouseClicked
+
+        if(jtPRODUTOS.getSelectedRow() != -1){
+
+            lbDescricao.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 0).toString());
+            lbQTD.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 1).toString());
+            lbPRECO.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 2).toString());
+
+        }
+    }//GEN-LAST:event_jtPRODUTOSMouseClicked
+
+    private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+
+        DefaultTableModel btmPRODUTOS = (DefaultTableModel)jtPRODUTOS.getModel();
+        Object [] dados = {tfDESCRICAO.getText(),tfQTD.getText(),tfPRECO.getText()};
+        btmPRODUTOS.addRow(dados);
+    }//GEN-LAST:event_btCadastrarActionPerformed
 
     /**
      * @param args the command line arguments

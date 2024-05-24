@@ -55,9 +55,10 @@ public class Index extends javax.swing.JFrame {
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setText("E-mail");
         getContentPane().add(lblEmail);
-        lblEmail.setBounds(390, 130, 40, 16);
+        lblEmail.setBounds(350, 120, 40, 16);
 
         txtUsuario.setBackground(new java.awt.Color(245, 245, 245));
+        txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtUsuario.setMinimumSize(new java.awt.Dimension(20, 30));
         txtUsuario.setPreferredSize(new java.awt.Dimension(10, 20));
@@ -67,16 +68,17 @@ public class Index extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtUsuario);
-        txtUsuario.setBounds(390, 150, 200, 30);
+        txtUsuario.setBounds(350, 140, 220, 30);
 
         lblSenha.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblSenha.setForeground(new java.awt.Color(255, 255, 255));
         lblSenha.setText("Senha");
         getContentPane().add(lblSenha);
-        lblSenha.setBounds(390, 190, 60, 16);
+        lblSenha.setBounds(350, 180, 60, 16);
 
         txtSenha.setBackground(new java.awt.Color(245, 245, 245));
         txtSenha.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txtSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSenhaActionPerformed(evt);
@@ -88,7 +90,7 @@ public class Index extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtSenha);
-        txtSenha.setBounds(390, 210, 200, 30);
+        txtSenha.setBounds(350, 200, 220, 30);
 
         BtnPassword.setBackground(new java.awt.Color(245, 245, 245));
         BtnPassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -99,7 +101,7 @@ public class Index extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BtnPassword);
-        BtnPassword.setBounds(400, 280, 140, 33);
+        BtnPassword.setBounds(390, 280, 140, 33);
 
         ckSenha.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ckSenha.setForeground(new java.awt.Color(242, 242, 242));
@@ -110,7 +112,7 @@ public class Index extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ckSenha);
-        ckSenha.setBounds(410, 250, 100, 20);
+        ckSenha.setBounds(350, 230, 100, 20);
 
         img_LogoAgro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agrocultiva_Orquídea___1_-removebg-preview.png"))); // NOI18N
         getContentPane().add(img_LogoAgro);
@@ -120,17 +122,17 @@ public class Index extends javax.swing.JFrame {
         lblSubTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblSubTitulo.setText("Digite seus dados de acesso no campo abaixo.");
         getContentPane().add(lblSubTitulo);
-        lblSubTitulo.setBounds(330, 80, 290, 30);
+        lblSubTitulo.setBounds(330, 70, 270, 30);
 
         lblTitulo.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo.setText("                    Boas vindas!");
+        lblTitulo.setText("Boas vindas!");
         getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(340, 30, 240, 60);
+        lblTitulo.setBounds(410, 40, 100, 23);
 
         fundo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ciano degrade.png"))); // NOI18N
         getContentPane().add(fundo1);
-        fundo1.setBounds(300, -100, 340, 660);
+        fundo1.setBounds(300, -60, 340, 660);
 
         fundo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/branco neve.png"))); // NOI18N
         getContentPane().add(fundo2);
