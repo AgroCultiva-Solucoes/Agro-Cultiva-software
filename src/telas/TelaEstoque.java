@@ -86,7 +86,8 @@ public class TelaEstoque extends javax.swing.JFrame {
             }
         });
         jtPRODUTOS.setMaximumSize(new java.awt.Dimension(650, 295));
-        jtPRODUTOS.setRowHeight(10);
+        jtPRODUTOS.setRowHeight(20);
+        jtPRODUTOS.getTableHeader().setResizingAllowed(false);
         jtPRODUTOS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jtPRODUTOSMouseClicked(evt);
@@ -159,9 +160,10 @@ public class TelaEstoque extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btClose, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+                .addGap(17, 17, 17))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,14 +186,14 @@ public class TelaEstoque extends javax.swing.JFrame {
                     .addComponent(btExcluir)
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 670, 410);
+        jPanel1.setBounds(0, 0, 670, 460);
 
-        pack();
+        setSize(new java.awt.Dimension(686, 467));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
