@@ -117,7 +117,7 @@ public class TelaMenu extends javax.swing.JFrame {
     private void mItemVerFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemVerFuncionariosActionPerformed
         // TODO add your handling code here:
         
-        new TelaCadUse().setVisible(true);
+        new TelaFuncionarios().setVisible(true);
 
         
     }//GEN-LAST:event_mItemVerFuncionariosActionPerformed
@@ -134,6 +134,7 @@ public class TelaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_menuFuncionariosActionPerformed
 
     private void mItemVerEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemVerEstoqueActionPerformed
+        dispose();
         new TelaEstoque().setVisible(true);
     }//GEN-LAST:event_mItemVerEstoqueActionPerformed
 
