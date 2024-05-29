@@ -10,7 +10,7 @@ public class TelaMenu extends javax.swing.JFrame {
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icon_LogoAgro.jpg")).getImage());
     }
 
-    public TelaMenu(Usuario userlogado) {
+    public TelaMenu(Usuario userLogado) {
         initComponents();
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icon_LogoAgro.jpg")).getImage());
     }
