@@ -86,7 +86,6 @@ public class TelaEstoque extends javax.swing.JFrame {
             }
         });
         jtPRODUTOS.setMaximumSize(new java.awt.Dimension(650, 295));
-        jtPRODUTOS.setRowHeight(20);
         jtPRODUTOS.getTableHeader().setResizingAllowed(false);
         jtPRODUTOS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -208,9 +207,9 @@ public class TelaEstoque extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(jtPRODUTOS.getSelectedRow() != -1){
 
-            jtPRODUTOS.setValueAt(lbDescricao.getText(), jtPRODUTOS.getSelectedRow(), 0);
-            jtPRODUTOS.setValueAt(lbQTD.getText(), jtPRODUTOS.getSelectedRow(), 1);
-            jtPRODUTOS.setValueAt(lbPRECO.getText(), jtPRODUTOS.getSelectedRow(), 2);
+            jtPRODUTOS.setValueAt(tfDESCRICAO.getText(), jtPRODUTOS.getSelectedRow(), 0);
+            jtPRODUTOS.setValueAt(tfQTD.getText(), jtPRODUTOS.getSelectedRow(), 1);
+            jtPRODUTOS.setValueAt(tfPRECO.getText(), jtPRODUTOS.getSelectedRow(), 2);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -254,9 +253,9 @@ public class TelaEstoque extends javax.swing.JFrame {
 
         if(jtPRODUTOS.getSelectedRow() != -1){
 
-            lbDescricao.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 0).toString());
-            lbQTD.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 1).toString());
-            lbPRECO.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 2).toString());
+            tfDESCRICAO.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 0).toString());
+            tfQTD.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 1).toString());
+            tfPRECO.setText(jtPRODUTOS.getValueAt(jtPRODUTOS.getSelectedRow(), 2).toString());
 
         }
     }//GEN-LAST:event_jtPRODUTOSMouseClicked

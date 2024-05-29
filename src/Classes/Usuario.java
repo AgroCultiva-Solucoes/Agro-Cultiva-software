@@ -1,27 +1,22 @@
 
 package Classes;
 public class Usuario {
-
+    private int id;
     private String nome;
     private String email;
-    private String usuario;
+    private String cpf;
     private String senha;
     private boolean adm;
 
     public Usuario() {
+        this.nome = "";
+        this.email = "";
+        this.cpf = "";
+        this.senha = "";
+        this.adm = false;
     }
-
-    public Usuario(String nome, String email, String usuario, String senha, boolean adm) {
-        this.nome = nome;
-        this.email = email;
-        this.usuario = usuario;
-        this.senha = senha;
-        this.adm = adm;
-    }
-
     
-    
-    public boolean isAdm() {
+    public boolean getAdm() {
         return adm;
     }
 
@@ -45,12 +40,12 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getCPF() {
+        return cpf;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setCPF(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getSenha() {
@@ -60,6 +55,5 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    
+
 }

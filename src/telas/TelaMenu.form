@@ -33,6 +33,16 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="menuMaquinario">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Maquinario"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menuAtividades">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Atividades"/>
+          </Properties>
+        </Menu>
         <Menu class="javax.swing.JMenu" name="menuEstoque">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
