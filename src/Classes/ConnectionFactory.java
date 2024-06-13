@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Classes;
 
-/**
- *
- * @author Hello
- */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,12 +8,11 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-
     private final String usuario = "root";
-    private final String senha = "@Heloisa111319";
+    private final String senha = "root";
     private final String host = "localhost";
-    private final String porta = "3306";
-    private final String bd = "agrocultivasolucoes1";
+    private final String porta = "3307";
+    private final String bd = "agrocultivasolucoes";
 
     public Connection obtemConexao() {
         try {
@@ -40,7 +31,7 @@ public class ConnectionFactory {
         }
     }
 
-   public static void closeConnection(Connection c, PreparedStatement ps, ResultSet rs) {
+    public static void closeConnection(Connection c, PreparedStatement ps, ResultSet rs) {
         try {
             if (rs != null) rs.close();
             if (ps != null) ps.close();
