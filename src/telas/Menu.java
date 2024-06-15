@@ -11,7 +11,7 @@ public class Menu extends javax.swing.JFrame {
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icon_LogoAgro.jpg")).getImage()); 
         initComponents();
         
-        lblUsuarioLogado.setText("<html>Logado como: <br>" + System.getProperty("usuario") + "</html>");
+        lblUsuarioLogado.setText(System.getProperty("usuario"));
     }
 
     @SuppressWarnings("unchecked")
@@ -88,11 +88,15 @@ public class Menu extends javax.swing.JFrame {
         quadroInfoSessao.setLayout(quadroInfoSessaoLayout);
         quadroInfoSessaoLayout.setHorizontalGroup(
             quadroInfoSessaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(quadroInfoSessaoLayout.createSequentialGroup()
+                .addComponent(lblUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         quadroInfoSessaoLayout.setVerticalGroup(
             quadroInfoSessaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblUsuarioLogado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addGroup(quadroInfoSessaoLayout.createSequentialGroup()
+                .addComponent(lblUsuarioLogado, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         btnSair.setBackground(new java.awt.Color(204, 0, 0));
@@ -117,7 +121,7 @@ public class Menu extends javax.swing.JFrame {
             btnSairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSairLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblSair, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btnSairLayout.setVerticalGroup(
@@ -145,8 +149,8 @@ public class Menu extends javax.swing.JFrame {
         navbarLayout.setHorizontalGroup(
             navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(navbarLayout.createSequentialGroup()
-                .addComponent(quadroInfoSessao, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addComponent(quadroInfoSessao, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(menuFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
                 .addComponent(menuSaf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,10 +167,10 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(navbarLayout.createSequentialGroup()
                 .addGroup(navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(menuFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(menuEst, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(menuSaf, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                        .addComponent(menuFunc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(menuEst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(menuSaf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -179,9 +183,8 @@ public class Menu extends javax.swing.JFrame {
         ContainerLayout.setVerticalGroup(
             ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContainerLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(454, Short.MAX_VALUE))
+                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 482, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -207,14 +210,15 @@ public class Menu extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "Você não tem acesso a está aba!", "Não Autorizado", JOptionPane.ERROR_MESSAGE);
         }
-       //new TelaCadFunc().setVisible(true);
     }//GEN-LAST:event_menuFuncMouseClicked
 
     private void menuEstMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuEstMouseClicked
+        dispose();
         new TelaEstoque().setVisible(true);
     }//GEN-LAST:event_menuEstMouseClicked
 
     private void menuSafMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSafMouseClicked
+        dispose();
         new Safra().setVisible(true);
     }//GEN-LAST:event_menuSafMouseClicked
 
@@ -222,10 +226,8 @@ public class Menu extends javax.swing.JFrame {
         Usuario validarPermanencia = new Usuario();
         
         if(!validarPermanencia.validarPermanencia()){
-            JOptionPane.showMessageDialog(null, "Sessão não iniciada!", "Erro", JOptionPane.ERROR_MESSAGE);
             this.dispose();
-
-                new Index().setVisible(true);
+            new Index().setVisible(true);
         }
     }//GEN-LAST:event_formWindowActivated
 

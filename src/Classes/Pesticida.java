@@ -1,11 +1,20 @@
 package Classes;
 
 public class Pesticida {
-    
+
     private int idPesticida;
     private String nomePesticida;
     private String tipoPesticida;
     private String descricao;
+    
+    public Pesticida(){
+    }
+
+    public Pesticida(String nomePesticida, String tipoPesticida, String descricao) {
+        this.nomePesticida = nomePesticida;
+        this.tipoPesticida = tipoPesticida;
+        this.descricao = descricao;
+    }
 
     public int getIdPesticida() {
         return idPesticida;
@@ -38,8 +47,4 @@ public class Pesticida {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    
-    
-    
 }

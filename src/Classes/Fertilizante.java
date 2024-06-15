@@ -7,6 +7,12 @@ public class Fertilizante {
     private String tipoFertilizante;
     private String descricao;
 
+    public Fertilizante(String nomeFertilizante, String tipoFertilizante, String descricao) {
+        this.nomeFertilizante = nomeFertilizante;
+        this.tipoFertilizante = tipoFertilizante;
+        this.descricao = descricao;
+    }
+
     public int getIdFertilizante() {
         return idFertilizante;
     }

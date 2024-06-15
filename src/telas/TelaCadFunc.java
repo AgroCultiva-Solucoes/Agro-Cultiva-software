@@ -11,7 +11,7 @@ public class TelaCadFunc extends javax.swing.JFrame {
     public TelaCadFunc() {
         initComponents();
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icon_LogoAgro.jpg")).getImage());
-        lblUsuarioLogado.setText("<html>Logado como: <br>" + System.getProperty("usuario") + "</html>");
+        lblUsuarioLogado.setText(System.getProperty("usuario"));
         
         try {
             listarUsuarios();
@@ -91,9 +91,7 @@ public class TelaCadFunc extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Erro ao alterar usuário: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
-    }
-       
-    
+    }  
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -110,7 +108,6 @@ public class TelaCadFunc extends javax.swing.JFrame {
         lblUsuarioLogado = new javax.swing.JLabel();
         btnVoltar = new javax.swing.JPanel();
         lblVoltar = new javax.swing.JLabel();
-        menuUsu = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         lblNome = new javax.swing.JLabel();
@@ -207,7 +204,7 @@ public class TelaCadFunc extends javax.swing.JFrame {
         );
         quadroInfoSessaoLayout.setVerticalGroup(
             quadroInfoSessaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblUsuarioLogado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(lblUsuarioLogado, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         btnVoltar.setBackground(new java.awt.Color(255, 255, 51));
@@ -233,49 +230,34 @@ public class TelaCadFunc extends javax.swing.JFrame {
             btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnVoltarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                .addComponent(lblVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btnVoltarLayout.setVerticalGroup(
             btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnVoltarLayout.createSequentialGroup()
-                .addComponent(lblVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addComponent(lblVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                 .addContainerGap())
         );
-
-        menuUsu.setForeground(new java.awt.Color(0, 0, 0));
-        menuUsu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_Funcionarios.png"))); // NOI18N
-        menuUsu.setText("Usuarios");
-        menuUsu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuUsuMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout navbarLayout = new javax.swing.GroupLayout(navbar);
         navbar.setLayout(navbarLayout);
         navbarLayout.setHorizontalGroup(
             navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(navbarLayout.createSequentialGroup()
-                .addComponent(quadroInfoSessao, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93)
-                .addComponent(menuUsu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(quadroInfoSessao, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(137, 137, 137)
                 .addComponent(menuSaf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
+                .addGap(86, 86, 86)
                 .addComponent(menuEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         navbarLayout.setVerticalGroup(
             navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(navbarLayout.createSequentialGroup()
-                .addGroup(navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(menuEst, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(menuSaf, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(menuUsu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addGroup(navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(menuEst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(menuSaf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(navbarLayout.createSequentialGroup()
                 .addGroup(navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -466,9 +448,8 @@ public class TelaCadFunc extends javax.swing.JFrame {
         containerLayout.setVerticalGroup(
             containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(containerLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome)
                     .addComponent(lblUsuario)
@@ -495,7 +476,7 @@ public class TelaCadFunc extends javax.swing.JFrame {
                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ckSenha)
                     .addComponent(ckAdm))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAlterar)
                     .addComponent(btnCadastrar)
@@ -514,12 +495,21 @@ public class TelaCadFunc extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(container, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
         );
 
         setSize(new java.awt.Dimension(852, 571));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        Usuario validarPermanencia = new Usuario();
+        
+        if(!validarPermanencia.validarPermanencia()){
+            this.dispose();
+            new Index().setVisible(true);
+        }
+    }//GEN-LAST:event_formWindowActivated
 
     private void tbFuncMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbFuncMouseClicked
         DefaultTableModel modeloTabela = (DefaultTableModel) tbFunc.getModel();
@@ -532,7 +522,6 @@ public class TelaCadFunc extends javax.swing.JFrame {
             String email = (String) modeloTabela.getValueAt(linhaSelecionada, 3);
             String cpf = (String) modeloTabela.getValueAt(linhaSelecionada, 4);
             boolean adm = (boolean) modeloTabela.getValueAt(linhaSelecionada, 5);
-
 
             txtNome.setText(nome);
             txtUsuario.setText(usuario);
@@ -559,15 +548,15 @@ public class TelaCadFunc extends javax.swing.JFrame {
             if (confirmacao == JOptionPane.YES_OPTION) {
                 try {
                     DAOusuario.deletarUsuario(idUsuario);
-                    JOptionPane.showMessageDialog(this, "Usuário excluído com sucesso!"); 
+                    JOptionPane.showMessageDialog(this, "Usuário excluído com sucesso!");
                     listarUsuarios();
-                } 
+                }
                 catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Erro ao excluir usuário: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Erro ao excluir usuário: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             }
         } else {
-        JOptionPane.showMessageDialog(this, "Selecione um usuário para excluir.", "Aviso", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Selecione um usuário para excluir.", "Aviso", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -597,6 +586,10 @@ public class TelaCadFunc extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ckSenhaActionPerformed
 
+    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCpfActionPerformed
+
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
 
     }//GEN-LAST:event_txtSenhaActionPerformed
@@ -615,43 +608,20 @@ public class TelaCadFunc extends javax.swing.JFrame {
 
     private void btnVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVoltarMouseClicked
         dispose();
-        
+
         Menu m = new Menu();
         m.setVisible(true);
     }//GEN-LAST:event_btnVoltarMouseClicked
 
     private void menuEstMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuEstMouseClicked
+        dispose();
         new TelaEstoque().setVisible(true);
     }//GEN-LAST:event_menuEstMouseClicked
 
     private void menuSafMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSafMouseClicked
+        dispose();
         new Safra().setVisible(true);
     }//GEN-LAST:event_menuSafMouseClicked
-
-    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCpfActionPerformed
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        Usuario validarPermanencia = new Usuario();
-        
-        if(!validarPermanencia.validarPermanencia()){
-            this.dispose();
-            new Index().setVisible(true);
-        }
-    }//GEN-LAST:event_formWindowActivated
-
-    private void menuUsuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuUsuMouseClicked
-        new TelaCadFunc().setVisible(true);
-        }
-
-        public void deslogar(){
-            dispose();
-
-            Index telaIndex = new Index();
-            telaIndex.setVisible(true);
-
-    }//GEN-LAST:event_menuUsuMouseClicked
 
     public static void main(String args[]) {
         try {
@@ -723,7 +693,6 @@ public class TelaCadFunc extends javax.swing.JFrame {
     private javax.swing.JLabel lblVoltar;
     private javax.swing.JLabel menuEst;
     private javax.swing.JLabel menuSaf;
-    private javax.swing.JLabel menuUsu;
     private javax.swing.JPanel navbar;
     private javax.swing.JPanel quadroInfoSessao;
     private javax.swing.JTable tbFunc;
@@ -734,15 +703,4 @@ public class TelaCadFunc extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtSenha;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
-
-    private static class TelaEstoque {
-
-        public TelaEstoque() {
-        }
-
-        private void setVisible(boolean b) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-    }
-
 }

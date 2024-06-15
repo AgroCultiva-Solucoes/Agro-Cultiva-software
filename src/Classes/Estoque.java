@@ -5,19 +5,24 @@ public class Estoque {
     
     private int idEstoque;
     private String nome;
-    private int quantidade;
+    private double quantidade;
     private double preco;
     private String descricao;
 
     public Estoque() {
     }
 
-    public Estoque(int idEstoque,String nome, int quantidade, double preco, String descricao) {
+    public Estoque(int idEstoque,String nome, double quantidade, double preco, String descricao) {
         this.idEstoque = idEstoque;
         this.nome = nome;
         this.quantidade = quantidade;
         this.preco = preco;
         this.descricao = descricao;
+    }
+    public Estoque(int idEstoque, double quantidade, double preco) {
+        this.idEstoque = idEstoque;
+        this.quantidade = quantidade;
+        this.preco = preco;
     }
 
     public String getNome() {
@@ -44,7 +49,7 @@ public class Estoque {
         this.idEstoque = idEstoque;
     }
 
-    public int getQuantidade() {
+    public double getQuantidade() {
         return quantidade;
     }
 
