@@ -1,28 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Classes;
-
-/**
- *
- * @author Hello
- */
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-
 public class Climas {
     private int idClima;
-   private int IdSafra;
+    private int idSafra;
     private String clima;
     private LocalDate data;
     private LocalTime hora;
     private float temperatura;
-    private float umidade;
-    private float precipitacao;
-    private float velocidade_vento;
+    private String descricao;
+
+    public Climas() {
+    }
 
     public int getIdClima() {
         return idClima;
@@ -32,12 +23,12 @@ public class Climas {
         this.idClima = idClima;
     }
 
-   public int getIdSafra() {
-        return IdSafra;
+    public int getIdSafra() {
+        return idSafra;
     }
 
-    public void setIdSafra(int IdSafra) {
-        this.IdSafra = IdSafra;
+    public void setIdSafra(int idSafra) {
+        this.idSafra = idSafra;
     }
 
     public String getClima() {
@@ -72,31 +63,11 @@ public class Climas {
         this.temperatura = temperatura;
     }
 
-    public float getUmidade() {
-        return umidade;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setUmidade(float umidade) {
-        this.umidade = umidade;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
-
-    public float getPrecipitacao() {
-        return precipitacao;
-    }
-
-    public void setPrecipitacao(float precipitacao) {
-        this.precipitacao = precipitacao;
-    }
-
-    public float getVelocidade_vento() {
-        return velocidade_vento;
-    }
-
-    public void setVelocidade_vento(float velocidade_vento) {
-        this.velocidade_vento = velocidade_vento;
-    }
-
-    
-
-    
-    }
+}

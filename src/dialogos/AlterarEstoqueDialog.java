@@ -4,6 +4,8 @@ import Classes.Estoque;
 import dao.DAOestoque;
 import java.sql.SQLException;
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 public class AlterarEstoqueDialog extends JDialog {
 
@@ -32,10 +34,50 @@ public class AlterarEstoqueDialog extends JDialog {
         setLocationRelativeTo(parent);
 
         btnAlterar.addActionListener(e -> {
-            alterarEstoque();
-            dispose();
+            if (camposPreenchidos()) {
+                alterarEstoque();
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Preencha todos os campos antes de alterar.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
         });
 
+        // Monitorar alterações nos campos de texto para ativar/desativar o botão
+        txtQuantidade.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                checkCamposPreenchidos();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                checkCamposPreenchidos();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                checkCamposPreenchidos();
+            }
+        });
+
+        txtValor.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                checkCamposPreenchidos();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                checkCamposPreenchidos();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                checkCamposPreenchidos();
+            }
+        });
+
+        checkCamposPreenchidos();
         carregarDadosEstoque();
     }
 
@@ -55,37 +97,26 @@ public class AlterarEstoqueDialog extends JDialog {
         }
     }
 
-    private void alterarEstoque() {
-        double novaQuantidade = Double.parseDouble(txtQuantidade.getText());
-        double novoValor = Double.parseDouble(txtValor.getText());
+    private boolean camposPreenchidos() {
+        String quantidade = txtQuantidade.getText().trim();
+        String valor = txtValor.getText().trim();
+        return !quantidade.isEmpty() && !valor.isEmpty();
+    }
 
+    private void checkCamposPreenchidos() {
+        btnAlterar.setEnabled(camposPreenchidos());
+    }
+
+    private void alterarEstoque() {
         try {
+            double novaQuantidade = Double.parseDouble(txtQuantidade.getText().trim());
+            double novoValor = Double.parseDouble(txtValor.getText().trim());
+
             Estoque estoque = new Estoque(idEstoque, novaQuantidade, novoValor);
             DAOestoque.alterarEstoquePorId(estoque);
             JOptionPane.showMessageDialog(this, "Estoque alterado com sucesso!");
-        } catch (SQLException e) {
+        } catch (NumberFormatException | SQLException e) {
             JOptionPane.showMessageDialog(this, "Erro ao alterar estoque: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
-    }
-
-    // Método principal para testar o diálogo
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame();
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(400, 200);
-            frame.setVisible(true);
-
-            JButton btnOpenDialog = new JButton("Abrir Diálogo");
-            btnOpenDialog.addActionListener(e -> {
-                // Simulação de ID do estoque
-                int idEstoque = 1; // ID da linha selecionada
-
-                AlterarEstoqueDialog dialog = new AlterarEstoqueDialog(frame, idEstoque);
-                dialog.setVisible(true);
-            });
-
-            frame.add(btnOpenDialog);
-        });
     }
 }

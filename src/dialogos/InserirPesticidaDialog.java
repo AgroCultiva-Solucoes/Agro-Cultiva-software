@@ -34,20 +34,34 @@ public class InserirPesticidaDialog extends JDialog {
         setLocationRelativeTo(parent);
 
         btnInserir.addActionListener(e -> {
-            inserirPesticida();
-            dispose();
+            if (camposPreenchidos()) {
+                inserirPesticida();
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Preencha todos os campos antes de inserir.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
         });
     }
 
+    private boolean camposPreenchidos() {
+        String nome = txtNome.getText().trim();
+        String tipo = txtTipo.getText().trim();
+        return !nome.isEmpty() && !tipo.isEmpty();
+    }
+
     private void inserirPesticida() {
-        String nome = txtNome.getText();
-        String tipo = txtTipo.getText();
-        String descricao = txtDescricao.getText();
+        String nome = txtNome.getText().trim();
+        String tipo = txtTipo.getText().trim();
+        String descricao = txtDescricao.getText().trim();
 
         try {
-            Pesticida pesticida = new Pesticida(nome, tipo, descricao);
-            DAOpesticida.inserirPesticida(pesticida);
-            JOptionPane.showMessageDialog(this, "Pesticida inserido com sucesso!");
+            if (camposPreenchidos()) {
+                Pesticida pesticida = new Pesticida(nome, tipo, descricao);
+                DAOpesticida.inserirPesticida(pesticida);
+                JOptionPane.showMessageDialog(this, "Pesticida inserido com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Preencha todos os campos antes de inserir.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Erro ao inserir pesticida: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }

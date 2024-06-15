@@ -140,7 +140,6 @@ public class TelaEstoque extends javax.swing.JFrame {
         navbar.setName(""); // NOI18N
 
         menuSaf.setBackground(new java.awt.Color(153, 153, 153));
-        menuSaf.setForeground(new java.awt.Color(0, 0, 0));
         menuSaf.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menuSaf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_Trigo.png"))); // NOI18N
         menuSaf.setText("Safras");
@@ -154,7 +153,7 @@ public class TelaEstoque extends javax.swing.JFrame {
             }
         });
 
-        quadroInfoSessao.setBackground(new java.awt.Color(0, 255, 255));
+        quadroInfoSessao.setBackground(new java.awt.Color(142, 172, 198));
         quadroInfoSessao.setPreferredSize(new java.awt.Dimension(200, 50));
 
         lblUsuarioLogado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -174,7 +173,7 @@ public class TelaEstoque extends javax.swing.JFrame {
             .addComponent(lblUsuarioLogado, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        btnVoltar.setBackground(new java.awt.Color(255, 255, 51));
+        btnVoltar.setBackground(new java.awt.Color(142, 172, 198));
         btnVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVoltar.setMaximumSize(new java.awt.Dimension(39, 32767));
         btnVoltar.setPreferredSize(new java.awt.Dimension(100, 50));
@@ -185,7 +184,6 @@ public class TelaEstoque extends javax.swing.JFrame {
         });
 
         lblVoltar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblVoltar.setForeground(new java.awt.Color(0, 0, 0));
         lblVoltar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblVoltar.setText(">");
         lblVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -202,7 +200,6 @@ public class TelaEstoque extends javax.swing.JFrame {
             .addComponent(lblVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        menuUsu1.setForeground(new java.awt.Color(0, 0, 0));
         menuUsu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_Funcionarios.png"))); // NOI18N
         menuUsu1.setText("Funcionarios");
         menuUsu1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -226,20 +223,16 @@ public class TelaEstoque extends javax.swing.JFrame {
         );
         navbarLayout.setVerticalGroup(
             navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(navbarLayout.createSequentialGroup()
-                .addGroup(navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(menuSaf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuUsu1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0))
-            .addGroup(navbarLayout.createSequentialGroup()
-                .addGroup(navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(quadroInfoSessao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0))
+            .addGroup(navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(menuSaf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuUsu1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(quadroInfoSessao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pFertilizante.setBackground(new java.awt.Color(142, 172, 198));
-        pFertilizante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pFertilizante.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         pFertilizante.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pFertilizanteMouseClicked(evt);
@@ -253,7 +246,6 @@ public class TelaEstoque extends javax.swing.JFrame {
             }
         });
 
-        lblFertilizante.setForeground(new java.awt.Color(0, 0, 0));
         lblFertilizante.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFertilizante.setText("Fertilizante");
         lblFertilizante.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -284,7 +276,7 @@ public class TelaEstoque extends javax.swing.JFrame {
         );
 
         pPesticida.setBackground(new java.awt.Color(142, 172, 198));
-        pPesticida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pPesticida.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         pPesticida.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pPesticidaMouseClicked(evt);
@@ -298,7 +290,6 @@ public class TelaEstoque extends javax.swing.JFrame {
             }
         });
 
-        lblPesticida.setForeground(new java.awt.Color(0, 0, 0));
         lblPesticida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPesticida.setText("Pesticida");
         lblPesticida.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -365,23 +356,25 @@ public class TelaEstoque extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(navbar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pFertilizante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pPesticida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(107, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(200, 200, 200)
+                                .addComponent(pFertilizante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(195, 195, 195)
+                                .addComponent(pPesticida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(92, 92, 92)
                                 .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(333, 333, 333)
                                 .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnAtualizar2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 77, Short.MAX_VALUE)))
+                                .addComponent(btnAtualizar2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(92, 92, 92)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -548,8 +541,6 @@ public class TelaEstoque extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterar;
-    private javax.swing.JButton btnAtualizar;
-    private javax.swing.JButton btnAtualizar1;
     private javax.swing.JButton btnAtualizar2;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JPanel btnVoltar;

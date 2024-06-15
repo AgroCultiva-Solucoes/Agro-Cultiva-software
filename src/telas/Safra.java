@@ -1,7 +1,6 @@
 package telas;
 
 import Classes.Usuario;
-import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 
 public class Safra extends javax.swing.JFrame {
@@ -26,22 +25,7 @@ public class Safra extends javax.swing.JFrame {
         menuLogout = new javax.swing.JMenu();
         jSlider1 = new javax.swing.JSlider();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        pSoja = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        lbSoja = new javax.swing.JLabel();
-        lbSojaN = new javax.swing.JLabel();
-        pArroz = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        lbArroz = new javax.swing.JLabel();
-        lbArrozN = new javax.swing.JLabel();
-        pTrigo = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        lbTrigo = new javax.swing.JLabel();
-        lbTrigoN = new javax.swing.JLabel();
+        container = new javax.swing.JPanel();
         navbar = new javax.swing.JPanel();
         menuEst1 = new javax.swing.JLabel();
         quadroInfoSessao = new javax.swing.JPanel();
@@ -49,6 +33,15 @@ public class Safra extends javax.swing.JFrame {
         btnVoltar = new javax.swing.JPanel();
         lblVoltar = new javax.swing.JLabel();
         menuUsu1 = new javax.swing.JLabel();
+        pArroz = new javax.swing.JPanel();
+        imgArroz = new javax.swing.JLabel();
+        lbArrozN = new javax.swing.JLabel();
+        pTrigo = new javax.swing.JPanel();
+        imgTrigo = new javax.swing.JLabel();
+        lbTrigoN = new javax.swing.JLabel();
+        pSoja = new javax.swing.JPanel();
+        imgSoja = new javax.swing.JLabel();
+        lbSojaN = new javax.swing.JLabel();
 
         navBar.setBackground(new java.awt.Color(252, 233, 204));
 
@@ -116,178 +109,10 @@ public class Safra extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(212, 212, 234));
-        jPanel1.setMaximumSize(new java.awt.Dimension(835, 532));
-        jPanel1.setMinimumSize(new java.awt.Dimension(835, 532));
-        jPanel1.setPreferredSize(new java.awt.Dimension(835, 532));
-
-        pSoja.setBackground(new java.awt.Color(142, 172, 198));
-        pSoja.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pSoja.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pSojaMouseClicked(evt);
-            }
-        });
-
-        lbSoja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/soybean (4) (3).png"))); // NOI18N
-        lbSoja.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbSojaMouseClicked(evt);
-            }
-        });
-
-        lbSojaN.setForeground(new java.awt.Color(0, 0, 0));
-        lbSojaN.setText("SOJA");
-        lbSojaN.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbSojaNMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pSojaLayout = new javax.swing.GroupLayout(pSoja);
-        pSoja.setLayout(pSojaLayout);
-        pSojaLayout.setHorizontalGroup(
-            pSojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pSojaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbSoja, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
-            .addGroup(pSojaLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(lbSojaN)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pSojaLayout.setVerticalGroup(
-            pSojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pSojaLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(pSojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3))
-                .addContainerGap(97, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pSojaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbSoja, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbSojaN)
-                .addContainerGap())
-        );
-
-        pArroz.setBackground(new java.awt.Color(142, 172, 198));
-        pArroz.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pArroz.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pArrozMouseClicked(evt);
-            }
-        });
-
-        lbArroz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rice (1).png"))); // NOI18N
-        lbArroz.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbArrozMouseClicked(evt);
-            }
-        });
-
-        lbArrozN.setForeground(new java.awt.Color(0, 0, 0));
-        lbArrozN.setText("ARROZ");
-        lbArrozN.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbArrozNMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pArrozLayout = new javax.swing.GroupLayout(pArroz);
-        pArroz.setLayout(pArrozLayout);
-        pArrozLayout.setHorizontalGroup(
-            pArrozLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pArrozLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addGap(18, 18, 18)
-                .addComponent(lbArroz)
-                .addGap(23, 23, 23))
-            .addGroup(pArrozLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(lbArrozN)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pArrozLayout.setVerticalGroup(
-            pArrozLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pArrozLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(pArrozLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9))
-                .addContainerGap(97, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pArrozLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbArroz, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbArrozN)
-                .addContainerGap())
-        );
-
-        pTrigo.setBackground(new java.awt.Color(142, 172, 198));
-        pTrigo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pTrigo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pTrigoMouseClicked(evt);
-            }
-        });
-
-        lbTrigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wheat-sack (5).png"))); // NOI18N
-        lbTrigo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbTrigoMouseClicked(evt);
-            }
-        });
-
-        lbTrigoN.setForeground(new java.awt.Color(0, 0, 0));
-        lbTrigoN.setText("TRIGO");
-        lbTrigoN.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbTrigoNMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pTrigoLayout = new javax.swing.GroupLayout(pTrigo);
-        pTrigo.setLayout(pTrigoLayout);
-        pTrigoLayout.setHorizontalGroup(
-            pTrigoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pTrigoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addGroup(pTrigoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pTrigoLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(lbTrigoN))
-                    .addComponent(lbTrigo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27))
-        );
-        pTrigoLayout.setVerticalGroup(
-            pTrigoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pTrigoLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(pTrigoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel13))
-                .addContainerGap(97, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pTrigoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbTrigo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbTrigoN)
-                .addContainerGap())
-        );
+        container.setBackground(new java.awt.Color(212, 212, 234));
+        container.setMaximumSize(new java.awt.Dimension(835, 532));
+        container.setMinimumSize(new java.awt.Dimension(835, 532));
+        container.setPreferredSize(new java.awt.Dimension(835, 532));
 
         navbar.setBackground(new java.awt.Color(142, 172, 198));
         navbar.setMaximumSize(new java.awt.Dimension(835, 50));
@@ -295,7 +120,7 @@ public class Safra extends javax.swing.JFrame {
         navbar.setName(""); // NOI18N
 
         menuEst1.setBackground(new java.awt.Color(153, 153, 153));
-        menuEst1.setForeground(new java.awt.Color(0, 0, 0));
+        menuEst1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuEst1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menuEst1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_Caixa.png"))); // NOI18N
         menuEst1.setText("Estoque");
@@ -310,9 +135,10 @@ public class Safra extends javax.swing.JFrame {
             }
         });
 
-        quadroInfoSessao.setBackground(new java.awt.Color(0, 255, 255));
+        quadroInfoSessao.setBackground(new java.awt.Color(142, 172, 198));
         quadroInfoSessao.setPreferredSize(new java.awt.Dimension(200, 50));
 
+        lblUsuarioLogado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblUsuarioLogado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUsuarioLogado.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
@@ -329,7 +155,7 @@ public class Safra extends javax.swing.JFrame {
             .addComponent(lblUsuarioLogado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        btnVoltar.setBackground(new java.awt.Color(255, 255, 51));
+        btnVoltar.setBackground(new java.awt.Color(142, 172, 198));
         btnVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVoltar.setMaximumSize(new java.awt.Dimension(39, 32767));
         btnVoltar.setPreferredSize(new java.awt.Dimension(100, 50));
@@ -340,7 +166,6 @@ public class Safra extends javax.swing.JFrame {
         });
 
         lblVoltar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblVoltar.setForeground(new java.awt.Color(0, 0, 0));
         lblVoltar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblVoltar.setText(">");
         lblVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -358,11 +183,11 @@ public class Safra extends javax.swing.JFrame {
         btnVoltarLayout.setVerticalGroup(
             btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnVoltarLayout.createSequentialGroup()
-                .addComponent(lblVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        menuUsu1.setForeground(new java.awt.Color(0, 0, 0));
+        menuUsu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuUsu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_Funcionarios.png"))); // NOI18N
         menuUsu1.setText("Funcionarios");
         menuUsu1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -377,33 +202,168 @@ public class Safra extends javax.swing.JFrame {
             navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(navbarLayout.createSequentialGroup()
                 .addComponent(quadroInfoSessao, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(114, 114, 114)
-                .addComponent(menuUsu1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addComponent(menuUsu1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addComponent(menuEst1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(161, 161, 161)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
                 .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         navbarLayout.setVerticalGroup(
             navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(navbarLayout.createSequentialGroup()
                 .addGroup(navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(quadroInfoSessao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnVoltar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(quadroInfoSessao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(menuEst1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(menuUsu1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, 0))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        pArroz.setBackground(new java.awt.Color(142, 172, 198));
+        pArroz.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pArroz.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pArrozMouseClicked(evt);
+            }
+        });
+
+        imgArroz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rice (1).png"))); // NOI18N
+        imgArroz.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgArrozMouseClicked(evt);
+            }
+        });
+
+        lbArrozN.setText("ARROZ");
+        lbArrozN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbArrozNMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pArrozLayout = new javax.swing.GroupLayout(pArroz);
+        pArroz.setLayout(pArrozLayout);
+        pArrozLayout.setHorizontalGroup(
+            pArrozLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pArrozLayout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(imgArroz)
+                .addGap(23, 23, 23))
+            .addGroup(pArrozLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(lbArrozN)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pArrozLayout.setVerticalGroup(
+            pArrozLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pArrozLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(imgArroz, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lbArrozN)
+                .addContainerGap())
+        );
+
+        pTrigo.setBackground(new java.awt.Color(142, 172, 198));
+        pTrigo.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pTrigo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pTrigoMouseClicked(evt);
+            }
+        });
+
+        imgTrigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wheat-sack (5).png"))); // NOI18N
+        imgTrigo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgTrigoMouseClicked(evt);
+            }
+        });
+
+        lbTrigoN.setText("TRIGO");
+        lbTrigoN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbTrigoNMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pTrigoLayout = new javax.swing.GroupLayout(pTrigo);
+        pTrigo.setLayout(pTrigoLayout);
+        pTrigoLayout.setHorizontalGroup(
+            pTrigoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pTrigoLayout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addGroup(pTrigoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pTrigoLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(lbTrigoN))
+                    .addComponent(imgTrigo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27))
+        );
+        pTrigoLayout.setVerticalGroup(
+            pTrigoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pTrigoLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(imgTrigo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lbTrigoN)
+                .addContainerGap())
+        );
+
+        pSoja.setBackground(new java.awt.Color(142, 172, 198));
+        pSoja.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pSoja.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pSojaMouseClicked(evt);
+            }
+        });
+
+        imgSoja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/soybean (4) (3).png"))); // NOI18N
+        imgSoja.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgSojaMouseClicked(evt);
+            }
+        });
+
+        lbSojaN.setText("SOJA");
+        lbSojaN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbSojaNMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pSojaLayout = new javax.swing.GroupLayout(pSoja);
+        pSoja.setLayout(pSojaLayout);
+        pSojaLayout.setHorizontalGroup(
+            pSojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pSojaLayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(imgSoja, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+            .addGroup(pSojaLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(lbSojaN)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pSojaLayout.setVerticalGroup(
+            pSojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pSojaLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(imgSoja, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lbSojaN)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout containerLayout = new javax.swing.GroupLayout(container);
+        container.setLayout(containerLayout);
+        containerLayout.setHorizontalGroup(
+            containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerLayout.createSequentialGroup()
                 .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(containerLayout.createSequentialGroup()
                 .addContainerGap(117, Short.MAX_VALUE)
                 .addComponent(pArroz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
@@ -412,27 +372,27 @@ public class Safra extends javax.swing.JFrame {
                 .addComponent(pSoja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(120, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        containerLayout.setVerticalGroup(
+            containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(containerLayout.createSequentialGroup()
                 .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pSoja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pArroz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pTrigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(container, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(container, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setSize(new java.awt.Dimension(851, 540));
@@ -454,6 +414,7 @@ public class Safra extends javax.swing.JFrame {
     }//GEN-LAST:event_menuFuncionariosActionPerformed
 
     private void mItemVerEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemVerEstoqueActionPerformed
+        dispose();
         new TelaEstoque().setVisible(true);
     }//GEN-LAST:event_mItemVerEstoqueActionPerformed
 
@@ -487,40 +448,58 @@ public class Safra extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_menuUsu1MouseClicked
 
-    private void lbArrozMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbArrozMouseClicked
-         
-    }//GEN-LAST:event_lbArrozMouseClicked
+    private void imgArrozMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgArrozMouseClicked
+        dispose(); 
+        MenuSafra Arroz = new MenuSafra("Arroz");
+        Arroz.setVisible(true);    
+    }//GEN-LAST:event_imgArrozMouseClicked
 
     private void lbArrozNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbArrozNMouseClicked
-        
+        dispose(); 
+        MenuSafra Arroz = new MenuSafra("Arroz");
+        Arroz.setVisible(true);
     }//GEN-LAST:event_lbArrozNMouseClicked
 
     private void pArrozMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pArrozMouseClicked
-       
+        dispose(); 
+        MenuSafra Arroz = new MenuSafra("Arroz");
+        Arroz.setVisible(true);
     }//GEN-LAST:event_pArrozMouseClicked
 
-    private void lbTrigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTrigoMouseClicked
-        
-    }//GEN-LAST:event_lbTrigoMouseClicked
+    private void imgTrigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgTrigoMouseClicked
+        dispose(); 
+        MenuSafra Arroz = new MenuSafra("Trigo");
+        Arroz.setVisible(true);
+    }//GEN-LAST:event_imgTrigoMouseClicked
 
     private void lbTrigoNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTrigoNMouseClicked
-        
+        dispose(); 
+        MenuSafra Arroz = new MenuSafra("Trigo");
+        Arroz.setVisible(true);
     }//GEN-LAST:event_lbTrigoNMouseClicked
 
     private void pTrigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pTrigoMouseClicked
-        
+        dispose(); 
+        MenuSafra Arroz = new MenuSafra("Trigo");
+        Arroz.setVisible(true);
     }//GEN-LAST:event_pTrigoMouseClicked
 
-    private void lbSojaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbSojaMouseClicked
-       
-    }//GEN-LAST:event_lbSojaMouseClicked
+    private void imgSojaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgSojaMouseClicked
+       dispose(); 
+        MenuSafra Arroz = new MenuSafra("Soja");
+        Arroz.setVisible(true);
+    }//GEN-LAST:event_imgSojaMouseClicked
 
     private void lbSojaNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbSojaNMouseClicked
-        
+        dispose(); 
+        MenuSafra Arroz = new MenuSafra("Soja");
+        Arroz.setVisible(true);
     }//GEN-LAST:event_lbSojaNMouseClicked
 
     private void pSojaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pSojaMouseClicked
-        
+        dispose(); 
+        MenuSafra Arroz = new MenuSafra("Soja");
+        Arroz.setVisible(true);
     }//GEN-LAST:event_pSojaMouseClicked
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -558,20 +537,14 @@ public class Safra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnVoltar;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel container;
+    private javax.swing.JLabel imgArroz;
+    private javax.swing.JLabel imgSoja;
+    private javax.swing.JLabel imgTrigo;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSlider jSlider1;
-    private javax.swing.JLabel lbArroz;
     private javax.swing.JLabel lbArrozN;
-    private javax.swing.JLabel lbSoja;
     private javax.swing.JLabel lbSojaN;
-    private javax.swing.JLabel lbTrigo;
     private javax.swing.JLabel lbTrigoN;
     private javax.swing.JLabel lblUsuarioLogado;
     private javax.swing.JLabel lblVoltar;

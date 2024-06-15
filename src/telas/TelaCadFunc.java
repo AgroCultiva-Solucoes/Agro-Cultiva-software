@@ -21,26 +21,35 @@ public class TelaCadFunc extends javax.swing.JFrame {
     }
     
     private void cadastrarUsuario() {
-        try {
-            Usuario usuario = new Usuario();
-            usuario.setNome(txtNome.getText());
-            usuario.setUsuario(txtUsuario.getText());
-            usuario.setEmail(txtEmail.getText());
-            usuario.setCpf(txtCpf.getText());
-            usuario.setSenha(new String(txtSenha.getPassword()));
-            usuario.setAdm(ckAdm.isSelected());
+    try {
+        String nome = txtNome.getText().trim();
+        String txtusuario = txtUsuario.getText().trim();
+        String email = txtEmail.getText().trim();
+        String cpf = txtCpf.getText().trim();
+        String senha = new String(txtSenha.getPassword()).trim();
 
-            // Chamar o método estático de cadastro de usuário da classe Usuario
-            Usuario.cadastrarUsuario(usuario);
-
-            // Atualizar a tabela após o cadastro
-            listarUsuarios();
-
-            JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Erro ao cadastrar usuário: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        if (nome.isEmpty() || txtusuario.isEmpty() || email.isEmpty() || cpf.isEmpty() || senha.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos obrigatórios.", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
         }
+
+        Usuario usuario = new Usuario();
+        usuario.setNome(nome);
+        usuario.setUsuario(txtusuario);
+        usuario.setEmail(email);
+        usuario.setCpf(cpf);
+        usuario.setSenha(senha);
+        usuario.setAdm(ckAdm.isSelected());
+
+        Usuario.cadastrarUsuario(usuario);
+
+        listarUsuarios();
+
+        JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!");
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Erro ao cadastrar usuário: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
     }
+}
     
     private void listarUsuarios() throws Exception {
         DefaultTableModel modeloTabela = (DefaultTableModel) tbFunc.getModel();
@@ -64,34 +73,51 @@ public class TelaCadFunc extends javax.swing.JFrame {
     }
     
     private void alterarUsuario() {
-        DefaultTableModel modeloTabela = (DefaultTableModel) tbFunc.getModel();
-        try {
-            int linhaSelecionada = tbFunc.getSelectedRow();
-            if (linhaSelecionada >= 0) {
-                // Obter o ID do usuário selecionado na tabela
-                int idUsuario = (int) modeloTabela.getValueAt(linhaSelecionada, 0);
+    DefaultTableModel modeloTabela = (DefaultTableModel) tbFunc.getModel();
+    try {
+        int linhaSelecionada = tbFunc.getSelectedRow();
+        if (linhaSelecionada >= 0) {
+            String nome = txtNome.getText().trim();
+            String txtusuario = txtUsuario.getText().trim();
+            String email = txtEmail.getText().trim();
+            String cpf = txtCpf.getText().trim();
+            String senha = new String(txtSenha.getPassword()).trim();
+            String confirmarSenha = new String(txtConfSenha.getPassword()).trim();
 
-                Usuario usuario = new Usuario();
-                usuario.setId(idUsuario);
-                usuario.setNome(txtNome.getText());
-                usuario.setUsuario(txtUsuario.getText());
-                usuario.setEmail(txtEmail.getText());
-                usuario.setCpf(txtCpf.getText());
-                usuario.setSenha(new String(txtSenha.getPassword()));
-                usuario.setAdm(ckAdm.isSelected());
-
-                Usuario.atualizarUsuario(usuario);
-
-                listarUsuarios();
-
-                JOptionPane.showMessageDialog(this, "Usuário atualizado com sucesso!");
-            } else {
-                JOptionPane.showMessageDialog(this, "Selecione um usuário para alterar.");
+            if (nome.isEmpty() || txtusuario.isEmpty() || email.isEmpty() || cpf.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos obrigatórios.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return; // Interrompe a alteração se algum campo obrigatório estiver vazio
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Erro ao alterar usuário: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+
+            // Verificar se as senhas batem
+            if (!senha.equals(confirmarSenha)) {
+                JOptionPane.showMessageDialog(this, "As senhas não coincidem. Por favor, digite novamente.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return; // Interrompe a alteração se as senhas não coincidirem
+            }
+
+            int idUsuario = (int) modeloTabela.getValueAt(linhaSelecionada, 0);
+
+            Usuario usuario = new Usuario();
+            usuario.setId(idUsuario);
+            usuario.setNome(nome);
+            usuario.setUsuario(txtusuario);
+            usuario.setEmail(email);
+            usuario.setCpf(cpf);
+            usuario.setSenha(senha);
+            usuario.setAdm(ckAdm.isSelected());
+
+            Usuario.atualizarUsuario(usuario);
+
+            listarUsuarios();
+
+            JOptionPane.showMessageDialog(this, "Usuário atualizado com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione um usuário para alterar.");
         }
-    }  
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Erro ao alterar usuário: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+}
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -157,7 +183,7 @@ public class TelaCadFunc extends javax.swing.JFrame {
         navbar.setName(""); // NOI18N
 
         menuSaf.setBackground(new java.awt.Color(153, 153, 153));
-        menuSaf.setForeground(new java.awt.Color(0, 0, 0));
+        menuSaf.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuSaf.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menuSaf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_Trigo.png"))); // NOI18N
         menuSaf.setText("Safras");
@@ -172,7 +198,7 @@ public class TelaCadFunc extends javax.swing.JFrame {
         });
 
         menuEst.setBackground(new java.awt.Color(153, 153, 153));
-        menuEst.setForeground(new java.awt.Color(0, 0, 0));
+        menuEst.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuEst.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menuEst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_Caixa.png"))); // NOI18N
         menuEst.setText("Estoque");
@@ -187,7 +213,7 @@ public class TelaCadFunc extends javax.swing.JFrame {
             }
         });
 
-        quadroInfoSessao.setBackground(new java.awt.Color(0, 255, 255));
+        quadroInfoSessao.setBackground(new java.awt.Color(142, 172, 198));
         quadroInfoSessao.setPreferredSize(new java.awt.Dimension(200, 50));
 
         lblUsuarioLogado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -207,7 +233,7 @@ public class TelaCadFunc extends javax.swing.JFrame {
             .addComponent(lblUsuarioLogado, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        btnVoltar.setBackground(new java.awt.Color(255, 255, 51));
+        btnVoltar.setBackground(new java.awt.Color(142, 172, 198));
         btnVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVoltar.setMaximumSize(new java.awt.Dimension(39, 32767));
         btnVoltar.setPreferredSize(new java.awt.Dimension(100, 50));
@@ -217,8 +243,7 @@ public class TelaCadFunc extends javax.swing.JFrame {
             }
         });
 
-        lblVoltar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblVoltar.setForeground(new java.awt.Color(0, 0, 0));
+        lblVoltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblVoltar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblVoltar.setText(">");
         lblVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -246,9 +271,9 @@ public class TelaCadFunc extends javax.swing.JFrame {
             navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(navbarLayout.createSequentialGroup()
                 .addComponent(quadroInfoSessao, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(137, 137, 137)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(menuSaf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(menuEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -265,7 +290,6 @@ public class TelaCadFunc extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        lblUsuario.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuario.setText("Usuario");
 
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -274,7 +298,6 @@ public class TelaCadFunc extends javax.swing.JFrame {
             }
         });
 
-        lblNome.setForeground(new java.awt.Color(0, 0, 0));
         lblNome.setText("Nome");
 
         txtNome.addActionListener(new java.awt.event.ActionListener() {
@@ -283,7 +306,6 @@ public class TelaCadFunc extends javax.swing.JFrame {
             }
         });
 
-        lblEmail.setForeground(new java.awt.Color(0, 0, 0));
         lblEmail.setText("Email");
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -292,7 +314,6 @@ public class TelaCadFunc extends javax.swing.JFrame {
             }
         });
 
-        lblSenha.setForeground(new java.awt.Color(0, 0, 0));
         lblSenha.setText("Senha");
 
         txtSenha.setActionCommand("");
@@ -302,10 +323,8 @@ public class TelaCadFunc extends javax.swing.JFrame {
             }
         });
 
-        lblConfSenha.setForeground(new java.awt.Color(0, 0, 0));
         lblConfSenha.setText("Confirmar senha");
 
-        lblCpf.setForeground(new java.awt.Color(0, 0, 0));
         lblCpf.setText("CPF");
 
         txtCpf.addActionListener(new java.awt.event.ActionListener() {
@@ -440,7 +459,7 @@ public class TelaCadFunc extends javax.swing.JFrame {
                             .addComponent(lblCpf)
                             .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(containerLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -476,15 +495,15 @@ public class TelaCadFunc extends javax.swing.JFrame {
                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ckSenha)
                     .addComponent(ckAdm))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAlterar)
                     .addComponent(btnCadastrar)
                     .addComponent(btnExcluir)
                     .addComponent(btnAtualizar))
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -495,10 +514,10 @@ public class TelaCadFunc extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(container, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+            .addComponent(container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(852, 571));
+        setSize(new java.awt.Dimension(852, 540));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

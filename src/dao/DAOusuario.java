@@ -129,4 +129,25 @@ public class DAOusuario {
             ConnectionFactory.closeConnection(conn, stmt);
         }
     }
+    
+    public static String obterSenhaPorId(int id) throws SQLException {
+    String sql = "SELECT senha FROM tbusuario WHERE idUsuario = ?";
+    Connection conn = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    
+    try {
+        conn = ConnectionFactory.getConnection();
+        stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, id);
+        rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            return rs.getString("senha");
+        }
+        return null;
+    } finally {
+        ConnectionFactory.closeConnection(conn, stmt, rs);
+    }
+}
 }

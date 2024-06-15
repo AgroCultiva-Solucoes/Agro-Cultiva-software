@@ -1,7 +1,7 @@
 package dialogos;
 
-import dao.DAOfertilizante;
 import Classes.Fertilizante;
+import dao.DAOfertilizante;
 import java.sql.SQLException;
 import javax.swing.*;
 
@@ -34,23 +34,36 @@ public class InserirFertilizanteDialog extends JDialog {
         setLocationRelativeTo(parent);
 
         btnInserir.addActionListener(e -> {
-            inserirFertilizante();
-            dispose();
+            if (camposPreenchidos()) {
+                inserirFertilizante();
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Preencha todos os campos antes de inserir.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
         });
     }
 
+    private boolean camposPreenchidos() {
+        String nome = txtNome.getText().trim();
+        String tipo = txtTipo.getText().trim();
+        return !nome.isEmpty() && !tipo.isEmpty();
+    }
+
     private void inserirFertilizante() {
-        String nome = txtNome.getText();
-        String tipo = txtTipo.getText();
-        String descricao = txtDescricao.getText();
+        String nome = txtNome.getText().trim();
+        String tipo = txtTipo.getText().trim();
+        String descricao = txtDescricao.getText().trim();
 
         try {
-            Fertilizante fertilizante = new Fertilizante(nome, tipo, descricao);
-            DAOfertilizante.inserirFertilizante(fertilizante);
-            JOptionPane.showMessageDialog(this, "Fertilizante inserido com sucesso!");
+            if (camposPreenchidos()) {
+                Fertilizante fertilizante = new Fertilizante(nome, tipo, descricao);
+                DAOfertilizante.inserirFertilizante(fertilizante);
+                JOptionPane.showMessageDialog(this, "Fertilizante inserido com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Preencha todos os campos antes de inserir.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Erro ao inserir fertilizante: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
-
