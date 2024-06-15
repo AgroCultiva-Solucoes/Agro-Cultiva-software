@@ -11,7 +11,7 @@ public class ConnectionFactory {
     private final String usuario = "root";
     private final String senha = "root";
     private final String host = "localhost";
-    private final String porta = "3307";
+    private final String porta = "3306";
     private final String bd = "agrocultivasolucoes";
 
     public Connection obtemConexao() {
