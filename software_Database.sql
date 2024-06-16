@@ -92,7 +92,6 @@ CREATE TABLE IF NOT EXISTS `agrocultivasolucoes`.`tbAtividades` (
   PRIMARY KEY (`idAtividade`),
   UNIQUE INDEX `id_atividade_UNIQUE` (`idAtividade` ASC) VISIBLE,
   UNIQUE INDEX `id_pesticida_UNIQUE` (`idPesticida` ASC) VISIBLE,
-  UNIQUE INDEX `id_fertilizante_natural_UNIQUE` (`idFertilizante` ASC) VISIBLE,
   INDEX `fk_atividades_users1_idx` (`idUsuario` ASC) VISIBLE,
   INDEX `fk_tbAtividades_tbSafra1_idx` (`idSafra` ASC) VISIBLE,
   CONSTRAINT `fk_atividades_pesticidas`
