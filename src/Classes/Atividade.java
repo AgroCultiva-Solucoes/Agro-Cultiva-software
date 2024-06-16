@@ -8,7 +8,6 @@ public class Atividade {
     private int IdUsuario;
     private int IdSafra;
     private int IdPesticida;
-    private int IdMaquinario;
     private int IdFertilizante;
     private String tipo;
     private double qtdd;
@@ -45,14 +44,6 @@ public class Atividade {
 
     public void setIdPesticida(int IdPesticida) {
         this.IdPesticida = IdPesticida;
-    }
-
-    public int getIdMaquinario() {
-        return IdMaquinario;
-    }
-
-    public void setIdMaquinario(int IdMaquinario) {
-        this.IdMaquinario = IdMaquinario;
     }
 
     public int getIdFertilizante() {

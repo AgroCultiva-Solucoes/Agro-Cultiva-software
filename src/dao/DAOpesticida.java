@@ -53,4 +53,32 @@ public class DAOpesticida {
             ConnectionFactory.closeConnection(conn, stmt, rs);
         }
     }
+    
+    public static List<String> obterNomesPesticidas() throws SQLException {
+        List<String> nomesPesticidas = new ArrayList<>();
+        String sql = "SELECT nomePesticida FROM tbpesticida";
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                nomesPesticidas.add(rs.getString("nomePesticida"));
+            }
+        }
+        return nomesPesticidas;
+    }
+
+    public static int obterIdPorNome(String nomePesticida) throws SQLException {
+        String sql = "SELECT idPesticida FROM tbpesticida WHERE nomePesticida = ?";
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, nomePesticida);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("idPesticida");
+                } else {
+                    throw new SQLException("Pesticida não encontrado com o nome: " + nomePesticida);
+                }
+            }
+        }
+    }
 }

@@ -1,6 +1,7 @@
 package telas;
 
 import Classes.Climas;
+import Classes.Usuario;
 import dao.DAOatividade;
 import dao.DAOclima;
 import dialogos.InserirClimaDialog;
@@ -16,37 +17,40 @@ public class MenuSafra extends javax.swing.JFrame {
         initComponents();
     }
     
-    public MenuSafra(String safra) {
-        initComponents();
-        System.setProperty("safra", safra);
-        try {
-            ResultSet rs = DAOatividade.contarAtividadesPorTipoSafra(safra);
-            System.out.println(rs); 
-           if (rs != null) {
-                lblSafra.setText("SAFRA: " + safra);
+public MenuSafra(String safra) {
+    this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icon_LogoAgro.jpg")).getImage());
+    initComponents();
+    System.setProperty("safra", safra);
+    try {
+        ResultSet rs = DAOatividade.contarAtividadesPorTipoSafra(safra);
+        if (rs != null && rs.next()) {
+            lblSafra.setText("SAFRA: " + safra);
 
-                int plantadors = rs.getInt("Plantado");
-                int colhidors = rs.getInt("Colhido");
-                int usoFertilizante = rs.getInt("Uso de Fertilizante");
-                int usoPesticida = rs.getInt("Uso de Pesticida");
-
-                lblValorPlantado.setText(String.valueOf(plantadors));
-                lblValorColhido.setText(String.valueOf(colhidors));
-                lblValorFertilizante.setText(String.valueOf(usoFertilizante));
-                lblValorPesticida.setText(String.valueOf(usoPesticida));
-            } else {
-                JOptionPane.showMessageDialog(null, "Dados não encontrados para a safra especificada.");
-                dispose();
-                Safra s = new Safra();
-                s.setVisible(true);
-            }
-            if (rs != null) {
-                rs.close();
-            }
-        } catch (SQLException e) {
+            double plantadors = rs.getDouble("Plantado");
+            double colhidors = rs.getDouble("Colhido");
+            double usoFertilizante = rs.getDouble("Uso de Fertilizante");
+            double usoPesticida = rs.getDouble("Uso de Pesticida");
+            
+            lblValorPlantado.setText(String.valueOf(plantadors));
+            lblValorColhido.setText(String.valueOf(colhidors));
+            lblValorFertilizante.setText(String.valueOf(usoFertilizante));
+            lblValorPesticida.setText(String.valueOf(usoPesticida));
+        } else {
+            lblSafra.setText("SAFRA: " + safra);
+            double plantadors = 0;
+            double colhidors = 0;
+            double usoFertilizante = 0;
+            double usoPesticida = 0;
+            lblValorPlantado.setText(String.valueOf(plantadors));
+            lblValorColhido.setText(String.valueOf(colhidors));
+            lblValorFertilizante.setText(String.valueOf(usoFertilizante));
+            lblValorPesticida.setText(String.valueOf(usoPesticida));
         }
-        preencherTabela(safra); 
+    } catch (SQLException e) {
+        e.printStackTrace();
     }
+    preencherTabela(safra);
+}
     
     
 private void preencherTabela(String safra) {
@@ -112,6 +116,11 @@ private void preencherTabela(String safra) {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 1000));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         navbar.setBackground(new java.awt.Color(142, 172, 198));
         navbar.setMaximumSize(new java.awt.Dimension(835, 50));
@@ -429,11 +438,38 @@ private void preencherTabela(String safra) {
     }//GEN-LAST:event_lbClimaMouseClicked
 
     private void lbAtiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbAtiMouseClicked
-
+        dispose();
+        Atividades ati = new Atividades();
+        ati.setVisible(true);
     }//GEN-LAST:event_lbAtiMouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        Usuario validarPermanencia = new Usuario();
+        
+        if(!validarPermanencia.validarPermanencia()){
+            this.dispose();
+            new Index().setVisible(true);
+        }
+    }//GEN-LAST:event_formWindowActivated
 
 
     public static void main(String args[]) {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                     break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MenuSafra().setVisible(true);

@@ -239,7 +239,7 @@ public class TelaEstoque extends javax.swing.JFrame {
             }
         });
 
-        iconFertilizante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/soybean (4) (3).png"))); // NOI18N
+        iconFertilizante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_fertilizante.png"))); // NOI18N
         iconFertilizante.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 iconFertilizanteMouseClicked(evt);
@@ -283,7 +283,7 @@ public class TelaEstoque extends javax.swing.JFrame {
             }
         });
 
-        iconPesticida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/soybean (4) (3).png"))); // NOI18N
+        iconPesticida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_pesticida.png"))); // NOI18N
         iconPesticida.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 iconPesticidaMouseClicked(evt);

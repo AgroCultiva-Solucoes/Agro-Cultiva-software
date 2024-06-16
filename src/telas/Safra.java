@@ -468,26 +468,26 @@ public class Safra extends javax.swing.JFrame {
 
     private void imgTrigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgTrigoMouseClicked
         dispose(); 
-        MenuSafra Arroz = new MenuSafra("Trigo");
-        Arroz.setVisible(true);
+        MenuSafra Trigo = new MenuSafra("Trigo");
+        Trigo.setVisible(true);
     }//GEN-LAST:event_imgTrigoMouseClicked
 
     private void lbTrigoNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTrigoNMouseClicked
         dispose(); 
-        MenuSafra Arroz = new MenuSafra("Trigo");
-        Arroz.setVisible(true);
+        MenuSafra Trigo = new MenuSafra("Trigo");
+        Trigo.setVisible(true);
     }//GEN-LAST:event_lbTrigoNMouseClicked
 
     private void pTrigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pTrigoMouseClicked
         dispose(); 
-        MenuSafra Arroz = new MenuSafra("Trigo");
-        Arroz.setVisible(true);
+        MenuSafra Trigo = new MenuSafra("Trigo");
+        Trigo.setVisible(true);
     }//GEN-LAST:event_pTrigoMouseClicked
 
     private void imgSojaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgSojaMouseClicked
        dispose(); 
-        MenuSafra Arroz = new MenuSafra("Soja");
-        Arroz.setVisible(true);
+        MenuSafra Soja = new MenuSafra("Soja");
+        Soja.setVisible(true);
     }//GEN-LAST:event_imgSojaMouseClicked
 
     private void lbSojaNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbSojaNMouseClicked
@@ -498,8 +498,8 @@ public class Safra extends javax.swing.JFrame {
 
     private void pSojaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pSojaMouseClicked
         dispose(); 
-        MenuSafra Arroz = new MenuSafra("Soja");
-        Arroz.setVisible(true);
+        MenuSafra Soja = new MenuSafra("Soja");
+        Soja.setVisible(true);
     }//GEN-LAST:event_pSojaMouseClicked
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
